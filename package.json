@@ -1,0 +1,23 @@
+{
+  "name": "myblog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/day-dreamerTo/nodejs-express-moogodb-myBlog.git"
+  },
+  "author": "zx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/day-dreamerTo/nodejs-express-moogodb-myBlog/issues"
+  },
+  "homepage": "https://github.com/day-dreamerTo/nodejs-express-moogodb-myBlog#readme",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.14.0"
+  }
+}
