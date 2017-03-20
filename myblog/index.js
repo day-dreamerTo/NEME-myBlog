@@ -44,6 +44,7 @@ app.locals.blog = {
   title:pkg.name,
   description:pkg.description
 }
+
 //添加模板必需的三个变量
 app.use(function(req,res,next){
   res.locals.user = req.session.user;

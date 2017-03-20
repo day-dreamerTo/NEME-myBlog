@@ -9,7 +9,7 @@ module.exports = {
 	checkNotLogin:function (req,res,next){
 		if(req.session.user){
 			req.flash('error','已登录');
-			req.redirect('back');
+			return res.redirect('back');
 		}
 	next();
 	}

@@ -17,6 +17,8 @@ router.post('/', checkNotLogin, function(req, res, next) {
   var name = req.fields.name;
   var gender = req.fields.gender;
   var bio = req.fields.bio;
+  console.log(req.files.avatar.path);///Users/admin/Desktop/nodejs-express-moogodb-myBlog/myblog/public/img/upload_07c9420ef81e9bb2c71015253a7d93ec.png
+  console.log(path.sep);// '/'
   var avatar = req.files.avatar.path.split(path.sep).pop();
   var password = req.fields.password;
   var repassword = req.fields.repassword;
@@ -62,9 +64,20 @@ router.post('/', checkNotLogin, function(req, res, next) {
   // 用户信息写入数据库
   UserModel.create(user)
     .then(function (result) {
+      console.log(result);
+      // { result: { ok: 1, n: 1 },
+      //   ops: 
+      //    [ { name: 'zxxx',
+      //        password: '3d4f2bf07dc1be38b20cd6e46949a1071f9d0e3d',
+      //        gender: 'm',
+      //        bio: 'asdfasdf',
+      //        avatar: 'upload_7caa589b2c690df4e3d846d2a426b802.jpg',
+      //        _id: 58cf90f7267ffe27b12dc8f3 } ],
+      //   insertedCount: 1,
+      //   insertedIds: [ , 58cf90f7267ffe27b12dc8f3 ] }
       // 此 user 是插入 mongodb 后的值，包含 _id
       user = result.ops[0];
-      // 将用户信息存入 session
+      // 将用户信息存入 session 密码不写入session
       delete user.password;
       req.session.user = user;
       // 写入 flash
