@@ -45,7 +45,7 @@ app.locals.blog = {
   description:pkg.description
 }
 
-//添加模板必需的三个变量
+//添加模板必需的三个变量 模板渲染时传入模板使用
 app.use(function(req,res,next){
   res.locals.user = req.session.user;
   res.locals.success = req.flash('success').toString();
