@@ -1,5 +1,3 @@
 myblog/node_modules/
 node_modules
-myblog/config/*
-!myblog/config/default.*
 myblog/npm-debug.log
